@@ -33,8 +33,8 @@ function getPDF() {
 
 function getPDF1() {
 
-    var HTML_Width = $(".create1").width();
-    var HTML_Height = $(".create1").height();
+    var HTML_Width = $("#invoice1").width();
+    var HTML_Height = $("#invoice1").height();
     var top_left_margin = 15;
     var PDF_Width = HTML_Width + (top_left_margin * 2);
     var PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
@@ -44,7 +44,7 @@ function getPDF1() {
     var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
 
 
-    html2canvas($(".create1")[0], { allowTaint: true }).then(function(canvas) {
+    html2canvas($("#invoice1")[0], { allowTaint: true }).then(function(canvas) {
         canvas.getContext('2d');
 
         console.log(canvas.height + "  " + canvas.width);
